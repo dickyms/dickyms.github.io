@@ -34,37 +34,30 @@ ScrollReveal().reveal(".container__right h4", {
 });
 ScrollReveal().reveal(".container__right h2", {
   ...scrollRevealOption,
-  delay: 2500,
+  delay: 1000,
 });
 ScrollReveal().reveal(".container__right h3", {
   ...scrollRevealOption,
-  delay: 3000,
+  delay: 1000,
 });
 ScrollReveal().reveal(".container__right p", {
   ...scrollRevealOption,
-  delay: 3500,
+  delay: 1000,
 });
 
 ScrollReveal().reveal(".container__right .tent-1", {
   duration: 1000,
-  delay: 4000,
+  delay: 1000,
 });
 ScrollReveal().reveal(".container__right .tent-2", {
   duration: 1000,
-  delay: 4500,
+  delay: 1000,
 });
 
 ScrollReveal().reveal(".location", {
   ...scrollRevealOption,
   origin: "left",
-  delay: 5000,
-});
-
-ScrollReveal().reveal(".socials span", {
-  ...scrollRevealOption,
-  origin: "top",
-  delay: 5500,
-  interval: 500,
+  delay: 1000,
 });
 
 document.addEventListener('DOMContentLoaded', () => {
