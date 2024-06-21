@@ -412,6 +412,14 @@ button:hover {
   font-size: 1.2em;
 }
 
+.method {
+  margin-bottom: 10px;
+}
+
+.method h2, .study h2 {
+  margin-bottom: 15px;
+}
+
 
 @media (width > 768px) {
   nav {
