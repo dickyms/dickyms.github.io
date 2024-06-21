@@ -273,6 +273,14 @@ nav {
   color: var(--text-dark);
 }
 
+#btn-prev, #btn-next {
+  padding: 1rem 2rem;
+  letter-spacing: 2px;
+  color: var(--white);
+  background-color: var(--text-dark);
+  border-radius: 5rem;
+}
+
 #testimonials {
   background-color: #f3eae5;
   padding: 50px;
