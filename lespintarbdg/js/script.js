@@ -66,3 +66,30 @@ ScrollReveal().reveal(".socials span", {
   delay: 5500,
   interval: 500,
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  let currentTestimonial = 0;
+  const testimonials = document.querySelectorAll('.testimonial');
+  const totalTestimonials = testimonials.length;
+
+  function showTestimonial(index) {
+      testimonials.forEach((testimonial, i) => {
+          testimonial.style.display = i === index ? 'block' : 'none';
+      });
+  }
+
+  function nextTestimonial() {
+      currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+      showTestimonial(currentTestimonial);
+  }
+
+  function prevTestimonial() {
+      currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
+      showTestimonial(currentTestimonial);
+  }
+
+  document.getElementById('btn-next').addEventListener('click', nextTestimonial);
+  document.getElementById('btn-prev').addEventListener('click', prevTestimonial);
+
+  showTestimonial(currentTestimonial);
+});
