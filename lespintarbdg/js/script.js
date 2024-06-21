@@ -61,6 +61,88 @@ ScrollReveal().reveal(".location", {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+  const tutors = [
+    { name: 'Aida', subject: '', description: '', img: 'assets/akhwat-icon.png' },
+    { name: 'Gina', subject: '', description: '', img: 'assets/akhwat-icon.png' },
+    { name: 'Karimah', subject: '', description: '', img: 'assets/akhwat-icon.png' },
+    { name: 'Nurul', subject: '', description: '', img: 'assets/akhwat-icon.png' },
+    { name: 'Novi', subject: '', description: '', img: 'assets/akhwat-icon.png' },
+    { name: 'Rina', subject: '', description: '', img: 'assets/akhwat-icon.png' },
+    { name: 'Rona', subject: '', description: '', img: 'assets/akhwat-icon.png' },
+    { name: 'Salma Khairunnisa', subject: '', description: '', img: 'assets/akhwat-icon.png' },
+    { name: 'Salma Nur', subject: '', description: '', img: 'assets/akhwat-icon.png' },
+    { name: 'Santi Deva', subject: '', description: '', img: 'assets/akhwat-icon.png' },
+    { name: 'Shafira', subject: '', description: '', img: 'assets/akhwat-icon.png' },
+    { name: 'Realisa', subject: '', description: '', img: 'assets/akhwat-icon.png' },
+    { name: 'Winda', subject: '', description: '', img: 'assets/akhwat-icon.png' },
+    { name: 'Sarah', subject: '', description: '', img: 'assets/akhwat-icon.png' }
+];
+
+const tutorsPerPage = 2; // Display two tutors per page
+let currentPage = 1;
+let filteredTutors = tutors;
+
+const tutorsContainer = document.getElementById('tutors');
+const filterInput = document.getElementById('filter');
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+const pageInfo = document.getElementById('page-info');
+
+function renderTutors() {
+    tutorsContainer.innerHTML = '';
+    const start = (currentPage - 1) * tutorsPerPage;
+    const end = start + tutorsPerPage;
+    const pageTutors = filteredTutors.slice(start, end);
+
+    pageTutors.forEach(tutor => {
+        const tutorDiv = document.createElement('div');
+        tutorDiv.classList.add('tutor');
+        tutorDiv.innerHTML = `
+            <img src="${tutor.img}" alt="${tutor.name}" class="tutor-img">
+            <h3 class="tutor-name">${tutor.name}</h3>
+            <p class="tutor-subject">${tutor.subject}</p>
+            <p class="tutor-description">${tutor.description}</p>
+        `;
+        tutorsContainer.appendChild(tutorDiv);
+    });
+
+    updatePagination();
+}
+
+function updatePagination() {
+    const totalPages = Math.ceil(filteredTutors.length / tutorsPerPage);
+    prevButton.disabled = currentPage === 1;
+    nextButton.disabled = currentPage === totalPages;
+}
+
+function filterTutors() {
+    const filterValue = filterInput.value.toLowerCase();
+    filteredTutors = tutors.filter(tutor => tutor.subject.toLowerCase().includes(filterValue));
+    currentPage = 1;
+    renderTutors();
+}
+
+filterInput.addEventListener('keyup', filterTutors);
+
+prevButton.addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        renderTutors();
+    }
+});
+
+nextButton.addEventListener('click', () => {
+    const totalPages = Math.ceil(filteredTutors.length / tutorsPerPage);
+    if (currentPage < totalPages) {
+        currentPage++; 
+    } else {
+      currentPage = 1; // Reset to the first page if at the last page
+    }
+    renderTutors();
+});
+
+renderTutors();
+
   let currentTestimonial = 0;
   const testimonials = document.querySelectorAll('.testimonial');
   const totalTestimonials = testimonials.length;

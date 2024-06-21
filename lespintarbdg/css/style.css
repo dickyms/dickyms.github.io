@@ -289,6 +289,14 @@ nav {
   border-radius: 5rem;
 }
 
+.btn-tutor {
+  padding: 10px 20px;
+  letter-spacing: 2px;
+  color: var(--white);
+  background-color: var(--text-dark);
+  border-radius: 5rem;
+}
+
 #testimonials {
   background-color: #f3eae5;
   padding: 50px;
@@ -313,6 +321,97 @@ nav {
   font-weight: bold;
   color: #555;
 }
+
+/*Tutor*/
+
+#tutors-section {
+  max-width: 800px;
+  margin: 0 15px;
+  padding: 20px;
+  background-color: #f3eae5;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#filter {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#tutors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* Center the tutor elements */
+}
+
+.tutor {
+    max-width: 250px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+}
+
+.tutor-img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.tutor-name {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.tutor-subject {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.tutor-description {
+  font-size: 0.9em;
+  color: #666;
+}
+
+#pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#page-info {
+  font-size: 1.2em;
+}
+
 
 @media (width > 768px) {
   nav {
