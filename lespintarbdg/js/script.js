@@ -1,4 +1,5 @@
-const menuBtn = document.getElementById("menu-btn");
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
 const menuBtnIcon = menuBtn.querySelector("i");
 
@@ -59,8 +60,6 @@ ScrollReveal().reveal(".location", {
   origin: "left",
   delay: 1000,
 });
-
-document.addEventListener('DOMContentLoaded', () => {
   const tutors = [
     { name: 'Aida', subject: '', description: '', img: 'assets/akhwat-icon.png' },
     { name: 'Gina', subject: '', description: '', img: 'assets/akhwat-icon.png' },
